@@ -2942,3 +2942,81 @@ a.usa-step-indicator__segment-label:hover {
   background-color: #fff;
   box-sizing: border-box;
 }
+
+/* Condition Builder - Question List Page
+   ========================================================================== */
+
+.condition-card {
+  background-color: #fff;
+  padding-left: 60px;
+}
+
+.condition-card-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.condition-card-controls {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.2rem;
+}
+
+.condition-collapse-btn {
+  background: #fff;
+  border: 2px solid #1b1b1b;
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border-radius: 0.2rem;
+}
+
+.condition-panel {
+  padding: 3rem 3.4rem;
+  background-color: #f0f0f0;
+  margin-bottom: 2rem;
+}
+
+.condition-panel--if {
+  border-left: 5px solid #162e51;
+}
+
+.condition-panel--do {
+  border-left: 5px solid #fa9441;
+}
+
+.condition-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 1rem;
+  margin-bottom: 3.4rem;
+  align-items: center;
+}
+
+.condition-row--header {
+  grid-template-columns: 80px 1fr;
+}
+
+.condition-row:last-child {
+  margin-bottom: 0;
+}
+
+.condition-label {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.condition-required {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #71767a;
+  white-space: nowrap;
+}
