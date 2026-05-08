@@ -2271,7 +2271,15 @@
           }, 100);
           return;
         } else {
-          // Add the question to the array
+          // Load any previously saved questions before adding the new one
+          const storedQuestions = sessionStorage.getItem('reviewQuestions') || localStorage.getItem('reviewQuestions');
+          if (storedQuestions) {
+            try {
+              parsedQuestions = JSON.parse(storedQuestions);
+            } catch (e) {
+              parsedQuestions = [];
+            }
+          }
           parsedQuestions.push(builtQuestion);
         }
       } else if (questionType === 'Form Builder') {
