@@ -3023,48 +3023,80 @@ a.usa-step-indicator__segment-label:hover {
   white-space: nowrap;
 }
 
-/* Fee Section - Application and License Fees (Payment Step)
+
+/* Fee Section — Application and License Fees (Payment Step)
    ========================================================================== */
 
+/* Outer layout wrappers */
 .fee-section {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 
+.fee-gray-container {
+  padding: 4rem;
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+}
+
+.fee-white-container {
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+/* Section heading (Application Fee / License/Permit Fee) */
 .fee-section-heading {
   font-size: 2.4rem;
   font-weight: 700;
-  border-bottom: 2px solid #1b1b1b;
+  border-bottom: 0.2rem solid #1b1b1b;
   padding-bottom: 1rem;
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
+/* Form Number / Application-Permit meta display */
 .fee-meta-row {
-  display: flex;
-  gap: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
 .fee-meta-item {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
 .fee-meta-label {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #1b1b1b;
 }
 
 .fee-meta-value {
   font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .fee-meta-value--strong {
-  font-weight: 700;
   font-size: 1.8rem;
+  font-weight: 700;
 }
 
+/* Inner gray section that holds the numbered fee rows */
+.fee-questions-section {
+  background-color: #f0f0f0;
+  padding: 0;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.fee-questions-section .section-indicator {
+  margin-bottom: 0;
+}
+
+/* Fee row grid (inside each section-indicator) */
 .fee-row-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr auto;
@@ -3072,13 +3104,7 @@ a.usa-step-indicator__segment-label:hover {
   align-items: start;
 }
 
-.fee-row-label {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
+/* Character counter beneath fee name inputs */
 .fee-char-count {
   display: block;
   font-size: 1.3rem;
@@ -3086,10 +3112,17 @@ a.usa-step-indicator__segment-label:hover {
   margin-top: 0.4rem;
 }
 
+/* Delete button column */
 .fee-delete-col {
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 0.4rem;
+  align-items: flex-start;
+  padding-top: 2.8rem;
+}
+
+.fee-clear-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
 }
 
 .fee-delete-btn {
@@ -3103,4 +3136,10 @@ a.usa-step-indicator__segment-label:hover {
 
 .fee-delete-btn:hover {
   opacity: 0.7;
+}
+
+.fee-row-wrapper {
+  border-bottom: 20px solid #fff;
+  border-radius: 0;
+  
 }
