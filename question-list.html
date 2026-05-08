@@ -306,6 +306,7 @@
               '</div>' +
 
               '<div class="condition-card-controls">' +
+                '<img src="assets/added-rules.png" alt="Added Rule(s)" id="added-rule-' + cardIndex + '" style="display:none;">' +
                 '<button type="button" id="collapse-btn-' + cardIndex + '" class="condition-collapse-btn" onclick="toggleCondition(' + cardIndex + ')" title="Collapse">&#8722;</button>' +
               '</div>' +
 
@@ -413,10 +414,13 @@
     }
 
     function saveCondition(cardIndex) {
+      document.getElementById('added-rule-' + cardIndex).style.display = 'inline-block';
+      toggleCondition(cardIndex);
       showNotification('Condition saved successfully!');
     }
 
     function clearCondition(cardIndex) {
+      document.getElementById('added-rule-' + cardIndex).style.display = 'none';
       var card = document.getElementById('condition-card-' + cardIndex);
       card.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
       card.querySelectorAll('select').forEach(function(s) { s.value = ''; });

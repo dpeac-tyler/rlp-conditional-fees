@@ -2960,7 +2960,9 @@ a.usa-step-indicator__segment-label:hover {
 
 .condition-card-controls {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 50px;
   padding-top: 0.2rem;
 }
 
