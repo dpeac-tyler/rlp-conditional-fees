@@ -136,7 +136,37 @@
 
         <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">Application and License Fees</h1>
+          <h1 class="app-builder-content__heading">Fees</h1>
+
+          <p class="app-builder-content__text">The SKU is the accounting code that needs to be associated with all the items on this application. These SKUs were pre-populated during your agency onboarding process. Please work with your accounting team if necessary.</p>
+
+          <p class="app-builder-content__text">The Application Fee is the amount that your agency charges the user when they submit their application. You must enter at least one (1) fee amount, but you can add more if necessary.</p>
+
+          <p class="app-builder-content__text">The License/Permit Fee is a regulatory or statutorily required fee that's associated with the license or permit that the user is applying for. This is typically a separate fee from the application fee. This area is optional, but you can add up to ten (10) different fees if necessary.</p>
+
+          <p class="app-builder-content__text"><strong>NOTE:</strong> You'll have the chance to preview what you've done at the end of this section.</p>
+
+          <!-- Icon Key -->
+          <div class="usa-accordion usa-accordion--bordered margin-top-2">
+            <h3 class="usa-accordion__heading">
+              <button
+                type="button"
+                class="usa-accordion__button"
+                aria-expanded="false"
+                aria-controls="icon-key-content"
+              >
+                Icon Key
+              </button>
+            </h3>
+            <div id="icon-key-content" class="usa-accordion__content usa-prose" hidden>
+              <div class="icon-key-grid">
+                <div class="icon-key-item">
+                  <img src="assets/icon-delete.png" alt="" width="24" height="24">
+                  <span>- Delete Row</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="app-builder-button-container">
             <a href="payment-section.html" class="usa-button usa-button--outline">Back</a>
@@ -147,6 +177,18 @@
 
     </main>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.usa-accordion__button').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          var content = document.getElementById(this.getAttribute('aria-controls'));
+          this.setAttribute('aria-expanded', !expanded);
+          content.hidden = expanded;
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
