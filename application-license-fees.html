@@ -168,6 +168,69 @@
             </div>
           </div>
 
+          <!-- ── Application Fee ──────────────────────────────────── -->
+          <div class="fee-section">
+            <h2 class="fee-section-heading">Application Fee</h2>
+            <p class="app-builder-content__text">Enter at least one (1) application fee that your agency will charge the end user.</p>
+
+            <div class="fee-meta-row">
+              <div class="fee-meta-item">
+                <span class="fee-meta-label">Form Number</span>
+                <span class="fee-meta-value" id="displayFormNumber">1</span>
+              </div>
+              <div class="fee-meta-item">
+                <span class="fee-meta-label">Application/Permit</span>
+                <span class="fee-meta-value fee-meta-value--strong" id="displayAppTitle">2026 UX License</span>
+              </div>
+            </div>
+
+            <div id="appFeeRows"></div>
+
+            <button type="button" class="usa-button usa-button--accent-warm" onclick="addAppFeeRow()">Add Price Point</button>
+          </div>
+
+          <!-- ── License/Permit Fee ────────────────────────────────── -->
+          <div class="fee-section">
+            <h2 class="fee-section-heading">License/Permit Fee</h2>
+            <p class="app-builder-content__text">If necessary, enter the regulatory or statutory fee associated with this license or permit. You can add up to ten (10) different fees.</p>
+
+            <div class="usa-form-group">
+              <label class="usa-label" for="licenseDescText">License/Permit Fee Description</label>
+              <div class="mock-editor">
+                <div class="mock-editor__toolbar">
+                  <button type="button" class="mock-editor__btn" title="Undo">↩</button>
+                  <button type="button" class="mock-editor__btn" title="Redo">↪</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Style" style="font-size:1.2rem;">Normal ▾</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Bold"><strong>B</strong></button>
+                  <button type="button" class="mock-editor__btn" title="Italic"><em>I</em></button>
+                  <button type="button" class="mock-editor__btn" title="Underline"><u>U</u></button>
+                  <button type="button" class="mock-editor__btn" title="Text Color"><u style="text-decoration-color:#e00; text-decoration-thickness:2px;">A</u></button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Link">&#128279;</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Bullet List">&#8226;&#8801;</button>
+                  <button type="button" class="mock-editor__btn" title="Numbered List">1.&#8801;</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Horizontal Rule">—</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Align Left">&#8676;</button>
+                  <button type="button" class="mock-editor__btn" title="Align Right">&#8677;</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Blockquote">&ldquo;</button>
+                  <button type="button" class="mock-editor__btn" title="Clear Formatting">T&#x2093;</button>
+                </div>
+                <textarea class="mock-editor__textarea" id="licenseDescText" maxlength="1000" rows="4" oninput="updateLicenseDesc(this)"></textarea>
+              </div>
+              <span class="fee-char-count" id="licenseDescCounter">1000 characters left</span>
+            </div>
+
+            <div id="licenseFeeRows"></div>
+
+            <button type="button" class="usa-button usa-button--accent-warm margin-top-2" onclick="addLicenseFeeRow()">Add Price Point</button>
+          </div>
+
           <div class="app-builder-button-container">
             <a href="payment-section.html" class="usa-button usa-button--outline">Back</a>
             <a href="additional-items.html" class="usa-button">Next</a>
@@ -178,16 +241,140 @@
     </main>
   </div>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.usa-accordion__button').forEach(function(button) {
-        button.addEventListener('click', function() {
+    var appFeeCount = 1;
+    var licenseFeeCount = 1;
+
+    var skuOptions =
+      '<option value="">Please Select</option>' +
+      '<option value="SKU-001">SKU-001 &mdash; Application Processing</option>' +
+      '<option value="SKU-002">SKU-002 &mdash; License Fee</option>' +
+      '<option value="SKU-003">SKU-003 &mdash; Permit Fee</option>';
+
+    window.addEventListener('DOMContentLoaded', function() {
+      // Accordion
+      document.querySelectorAll('.usa-accordion__button').forEach(function(btn) {
+        btn.addEventListener('click', function() {
           var expanded = this.getAttribute('aria-expanded') === 'true';
-          var content = document.getElementById(this.getAttribute('aria-controls'));
-          this.setAttribute('aria-expanded', !expanded);
-          content.hidden = expanded;
+          document.getElementById(this.getAttribute('aria-controls')).hidden = expanded;
+          this.setAttribute('aria-expanded', String(!expanded));
         });
       });
+
+      // Render initial fee rows
+      document.getElementById('appFeeRows').innerHTML = buildAppFeeRowHTML(0);
+      document.getElementById('licenseFeeRows').innerHTML = buildLicenseFeeRowHTML(0);
     });
+
+    function buildAppFeeRowHTML(idx) {
+      return (
+        '<div class="section-indicator fee-row-wrapper" data-section="' + (idx + 1) + '">' +
+          '<div class="fee-row-grid">' +
+            '<div>' +
+              '<label class="fee-row-label">SKU <span class="condition-required">Required</span></label>' +
+              '<select class="usa-select">' + skuOptions + '</select>' +
+            '</div>' +
+            '<div>' +
+              '<label class="fee-row-label">Application Fee Name <span class="condition-required">Required</span></label>' +
+              '<input class="usa-input fee-name-input" type="text" maxlength="50" oninput="updateFeeCounter(this)">' +
+              '<span class="fee-char-count">50 of 50 remaining</span>' +
+            '</div>' +
+            '<div>' +
+              '<label class="fee-row-label">Price Point</label>' +
+              '<input class="usa-input" type="text" value="$0.00">' +
+            '</div>' +
+            '<div class="fee-delete-col">' +
+              '<button type="button" class="fee-delete-btn" onclick="deleteFeeRow(this, \'appFeeRows\')" title="Delete Row" style="display:none;">' +
+                '<img src="assets/icon-delete.png" alt="Delete Row" width="24" height="24">' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    function buildLicenseFeeRowHTML(idx) {
+      return (
+        '<div class="section-indicator fee-row-wrapper" data-section="' + (idx + 1) + '">' +
+          '<div class="fee-row-grid">' +
+            '<div>' +
+              '<label class="fee-row-label">SKU</label>' +
+              '<select class="usa-select">' + skuOptions + '</select>' +
+            '</div>' +
+            '<div>' +
+              '<label class="fee-row-label">License Permit Fee Name</label>' +
+              '<input class="usa-input fee-name-input" type="text" maxlength="50" oninput="updateFeeCounter(this)">' +
+              '<span class="fee-char-count">50 of 50 remaining</span>' +
+            '</div>' +
+            '<div>' +
+              '<label class="fee-row-label">Price Point</label>' +
+              '<input class="usa-input" type="text" value="$0.00">' +
+            '</div>' +
+            '<div class="fee-delete-col">' +
+              '<button type="button" class="fee-delete-btn" onclick="deleteFeeRow(this, \'licenseFeeRows\')" title="Delete Row" style="display:none;">' +
+                '<img src="assets/icon-delete.png" alt="Delete Row" width="24" height="24">' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    function addAppFeeRow() {
+      var container = document.getElementById('appFeeRows');
+      container.insertAdjacentHTML('beforeend', buildAppFeeRowHTML(appFeeCount));
+      appFeeCount++;
+      updateAllDeleteButtons('appFeeRows', appFeeCount);
+    }
+
+    function addLicenseFeeRow() {
+      if (licenseFeeCount >= 10) {
+        alert('You can add up to ten (10) different fees.');
+        return;
+      }
+      var container = document.getElementById('licenseFeeRows');
+      container.insertAdjacentHTML('beforeend', buildLicenseFeeRowHTML(licenseFeeCount));
+      licenseFeeCount++;
+      updateAllDeleteButtons('licenseFeeRows', licenseFeeCount);
+    }
+
+    function deleteFeeRow(btn, containerId) {
+      var row = btn.closest('.fee-row-wrapper');
+      row.parentNode.removeChild(row);
+      if (containerId === 'appFeeRows') {
+        appFeeCount--;
+        updateAllDeleteButtons('appFeeRows', appFeeCount);
+      } else {
+        licenseFeeCount--;
+        updateAllDeleteButtons('licenseFeeRows', licenseFeeCount);
+      }
+      renumberRows(containerId);
+    }
+
+    function renumberRows(containerId) {
+      var rows = document.querySelectorAll('#' + containerId + ' .fee-row-wrapper');
+      rows.forEach(function(row, i) {
+        row.setAttribute('data-section', i + 1);
+      });
+    }
+
+    function updateAllDeleteButtons(containerId, count) {
+      document.querySelectorAll('#' + containerId + ' .fee-delete-btn').forEach(function(btn) {
+        btn.style.display = count > 1 ? '' : 'none';
+      });
+    }
+
+    function updateFeeCounter(input) {
+      var counter = input.nextElementSibling;
+      if (counter && counter.classList.contains('fee-char-count')) {
+        var remaining = 50 - input.value.length;
+        counter.textContent = remaining + ' of 50 remaining';
+      }
+    }
+
+    function updateLicenseDesc(textarea) {
+      var remaining = 1000 - textarea.value.length;
+      document.getElementById('licenseDescCounter').textContent = remaining + ' characters left';
+    }
   </script>
 </body>
 

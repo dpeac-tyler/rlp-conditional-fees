@@ -3022,3 +3022,85 @@ a.usa-step-indicator__segment-label:hover {
   color: #71767a;
   white-space: nowrap;
 }
+
+/* Fee Section - Application and License Fees (Payment Step)
+   ========================================================================== */
+
+.fee-section {
+  margin-top: 3.5rem;
+}
+
+.fee-section-heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  border-bottom: 2px solid #1b1b1b;
+  padding-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.fee-meta-row {
+  display: flex;
+  gap: 6rem;
+  margin-bottom: 2rem;
+}
+
+.fee-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.fee-meta-label {
+  font-size: 1.4rem;
+  color: #1b1b1b;
+}
+
+.fee-meta-value {
+  font-size: 1.6rem;
+}
+
+.fee-meta-value--strong {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.fee-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.fee-row-label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.fee-char-count {
+  display: block;
+  font-size: 1.3rem;
+  color: #71767a;
+  margin-top: 0.4rem;
+}
+
+.fee-delete-col {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.4rem;
+}
+
+.fee-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.fee-delete-btn:hover {
+  opacity: 0.7;
+}
