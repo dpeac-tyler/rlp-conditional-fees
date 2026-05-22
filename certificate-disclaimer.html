@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Information - RLP</title>
+  <title>Certificate Disclaimer - RLP</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -85,22 +85,22 @@
           <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="document-upload.html">Application Details</a>
           </li>
-          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="user-information.html">Applicant Information</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="question-builder.html">Question Builder</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Conditions</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="conditions.html">Conditions</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Payment</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="payment-section.html">Payment</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Preview</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="electronic-signature.html">Preview</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
             <span class="usa-step-indicator__segment-label">License</span>
           </li>
           <li class="usa-step-indicator__segment">
@@ -111,72 +111,66 @@
 
       <div class="usa-step-indicator__header">
         <h1 class="usa-step-indicator__heading">
-          <span class="usa-step-indicator__heading-counter">2</span>
+          <span class="usa-step-indicator__heading-counter">7</span>
           <span class="usa-step-indicator__total-steps">of 8</span>
-          <span class="usa-step-indicator__heading-text">Applicant Information</span>
+          <span class="usa-step-indicator__heading-text">License</span>
         </h1>
       </div>
 
       <div class="margin-top-4 app-builder-container">
-        <!-- Left sidebar -->
         <div class="app-builder-sidebar">
           <div class="usa-step-indicator usa-step-indicator--sidebar" aria-label="step progress">
             <ol class="usa-step-indicator__segments">
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-section.html'">
+                <span class="usa-step-indicator__segment-label">Certificate Section</span>
+              </li>
+              <div class="step-connector-line"></div>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-dates.html'">
+                <span class="usa-step-indicator__segment-label">Dates</span>
+              </li>
+              <div class="step-connector-line"></div>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-options.html'">
+                <span class="usa-step-indicator__segment-label">Certificate Options</span>
+              </li>
+              <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-                <a class="usa-step-indicator__segment-label" href="user-information.html">User Information</a>
+                <span class="usa-step-indicator__segment-label">Certificate Disclaimer</span>
               </li>
               <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="personal-information.html">Personal Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="contact-information.html">Contact Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="mailing-address.html">Mailing Address</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="demographic-information.html">Demographic Information</a>
+                <span class="usa-step-indicator__segment-label">Pocket Card Options</span>
               </li>
             </ol>
           </div>
         </div>
 
-        <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">User Information</h1>
+          <h1 class="app-builder-content__heading">Certificate Disclaimer</h1>
 
-          <p class="app-builder-content__text">Congratulations! The first section of your application is complete and we've saved what you've done so far. Remember, draft applications are always available in the Draft area of your dashboard.</p>
+          <p class="app-builder-content__text app-builder-content__text--lg-margin">
+            If you want to add a "small print" disclaimer to the user's Certificate, you can do that here. Just type the text into the box below.
+          </p>
 
-          <p class="app-builder-content__text">Now let's create fields for the personal and demographic information that you'll gather from users.</p>
+          <div class="section-indicator" data-section="4">
+            <h2 class="app-builder-content__subheading" style="font-size: 2.2rem;">Certificate Disclaimer</h2>
+            <div class="margin-bottom-2">
+              <label class="usa-label" for="disclaimer-text">Disclaimer Text</label>
+              <textarea class="usa-textarea" id="disclaimer-text" name="disclaimer-text" rows="6"></textarea>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+              <img src="assets/simplelandscapetemplate-disclaimer.png" alt="Certificate disclaimer preview" style="max-width: 100%;">
+            </div>
+          </div>
 
           <div class="app-builder-button-container">
-            <a href="personal-information.html" class="usa-button" style="margin-left: auto;">Next</a>
+            <a href="certificate-options.html" class="usa-button usa-button--outline">Back</a>
+            <a href="pocket-card-options.html" class="usa-button">Next</a>
           </div>
         </div>
       </div>
 
     </main>
   </div>
-
-  <script>
-    document.querySelectorAll('.usa-accordion__button').forEach(function(button) {
-      button.addEventListener('click', function() {
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        var content = document.getElementById(this.getAttribute('aria-controls'));
-        if (expanded) {
-          this.setAttribute('aria-expanded', 'false');
-          content.setAttribute('hidden', '');
-        } else {
-          this.setAttribute('aria-expanded', 'true');
-          content.removeAttribute('hidden');
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>

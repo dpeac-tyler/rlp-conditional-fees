@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Information - RLP</title>
+  <title>Electronic Signature - RLP</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -85,19 +85,19 @@
           <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="document-upload.html">Application Details</a>
           </li>
-          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="user-information.html">Applicant Information</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="question-builder.html">Question Builder</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Conditions</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="conditions.html">Conditions</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Payment</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="payment-section.html">Payment</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
             <span class="usa-step-indicator__segment-label">Preview</span>
           </li>
           <li class="usa-step-indicator__segment">
@@ -111,9 +111,9 @@
 
       <div class="usa-step-indicator__header">
         <h1 class="usa-step-indicator__heading">
-          <span class="usa-step-indicator__heading-counter">2</span>
+          <span class="usa-step-indicator__heading-counter">6</span>
           <span class="usa-step-indicator__total-steps">of 8</span>
-          <span class="usa-step-indicator__heading-text">Applicant Information</span>
+          <span class="usa-step-indicator__heading-text">Preview</span>
         </h1>
       </div>
 
@@ -122,24 +122,12 @@
         <div class="app-builder-sidebar">
           <div class="usa-step-indicator usa-step-indicator--sidebar" aria-label="step progress">
             <ol class="usa-step-indicator__segments">
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
-                <a class="usa-step-indicator__segment-label" href="user-information.html">User Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
-                <a class="usa-step-indicator__segment-label" href="personal-information.html">Personal Information</a>
-              </li>
-              <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-                <a class="usa-step-indicator__segment-label" href="contact-information.html">Contact Information</a>
+                <span class="usa-step-indicator__segment-label">Electronic Signature</span>
               </li>
               <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="mailing-address.html">Mailing Address</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="demographic-information.html">Demographic Information</a>
+                <span class="usa-step-indicator__segment-label">Application Preview</span>
               </li>
             </ol>
           </div>
@@ -147,101 +135,59 @@
 
         <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">Contact Information</h1>
+          <h1 class="app-builder-content__heading">Electronic Signature</h1>
 
-          <p class="app-builder-content__text">Now you can determine what contact information you want to gather from users.</p>
+          <p class="app-builder-content__text">You've chosen to require an electronic signature on your application. Please complete the attestation text below to continue.</p>
 
-          <p class="app-builder-content__text">Check "Displayed" for the items that you want to appear on the application. Check "Required" for the information that users must provide; otherwise, it will be considered optional.</p>
+          <div class="section-indicator margin-top-4" data-section="1">
+            <h2>Type the Attestation text in the field below. This will appear as the attestation for the constituent.</h2>
 
-          <!-- Section 2: Contact Information -->
-          <div class="section-indicator" data-section="2">
-
-            <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem;">Contact Information</h2>
-
-            <!-- Column headers -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #dfe1e2; margin-bottom: 1rem;">
-              <div style="font-weight: 700; font-size: 1.6rem;">Title</div>
-              <div style="font-weight: 700; font-size: 1.6rem;">Description</div>
-              <div style="font-weight: 700; font-size: 1.6rem;">Displayed</div>
-              <div style="font-weight: 700; font-size: 1.6rem;">Required</div>
+            <div class="usa-form-group">
+              <label class="usa-label" for="attestationText">Attestation Text <span class="field-required">Required</span></label>
+              <div class="mock-editor">
+                <div class="mock-editor__toolbar">
+                  <button type="button" class="mock-editor__btn" title="Undo">↩</button>
+                  <button type="button" class="mock-editor__btn" title="Redo">↪</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Style" style="font-size:1.2rem;">Normal ▾</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Bold"><strong>B</strong></button>
+                  <button type="button" class="mock-editor__btn" title="Italic"><em>I</em></button>
+                  <button type="button" class="mock-editor__btn" title="Underline"><u>U</u></button>
+                  <button type="button" class="mock-editor__btn" title="Text Color"><u style="text-decoration-color:#e00; text-decoration-thickness:2px;">A</u></button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Link">&#128279;</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Bullet List">&#8226;&#8801;</button>
+                  <button type="button" class="mock-editor__btn" title="Numbered List">1.&#8801;</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Horizontal Rule">—</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Align Left">&#8676;</button>
+                  <button type="button" class="mock-editor__btn" title="Align Right">&#8677;</button>
+                  <span class="mock-editor__separator">|</span>
+                  <button type="button" class="mock-editor__btn" title="Blockquote">&ldquo;</button>
+                  <button type="button" class="mock-editor__btn" title="Clear Formatting">T&#x2093;</button>
+                </div>
+                <textarea class="mock-editor__textarea" id="attestationText" maxlength="5000" rows="6" oninput="updateAttestationCounter(this)"></textarea>
+              </div>
+              <span class="fee-char-count" id="attestationCounter">5000 characters left</span>
             </div>
-
-            <!-- Row 1: Telephone Number -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0;">
-              <div style="font-size: 1.6rem;">Telephone Number</div>
-              <div style="font-size: 1.6rem; color: #71767a;">Primary Phone Number</div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="telephone-displayed" type="checkbox" name="telephone-displayed" checked disabled>
-                  <label class="usa-checkbox__label" for="telephone-displayed"></label>
-                </div>
-              </div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="telephone-required" type="checkbox" name="telephone-required" checked>
-                  <label class="usa-checkbox__label" for="telephone-required"></label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 2: Alt. Telephone Number -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0;">
-              <div style="font-size: 1.6rem;">Alt. Telephone Number</div>
-              <div style="font-size: 1.6rem; color: #71767a;">Alternate Phone Number</div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="altphone-displayed" type="checkbox" name="altphone-displayed">
-                  <label class="usa-checkbox__label" for="altphone-displayed"></label>
-                </div>
-              </div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="altphone-required" type="checkbox" name="altphone-required" disabled>
-                  <label class="usa-checkbox__label" for="altphone-required"></label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 3: Email Address -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0;">
-              <div style="font-size: 1.6rem;">Email Address</div>
-              <div style="font-size: 1.6rem; color: #71767a;">Email Address</div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="email-displayed" type="checkbox" name="email-displayed" checked disabled>
-                  <label class="usa-checkbox__label" for="email-displayed"></label>
-                </div>
-              </div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="email-required" type="checkbox" name="email-required" checked disabled>
-                  <label class="usa-checkbox__label" for="email-required"></label>
-                </div>
-              </div>
-            </div>
-
           </div>
 
-          <div class="app-builder-button-container">
-            <a href="personal-information-preview.html" class="usa-button usa-button--outline">Back</a>
-            <a href="contact-information-preview.html" class="usa-button">Next</a>
+          <div class="app-builder-button-container app-builder-button-container--right">
+            <a href="application-preview.html" class="usa-button">Next</a>
           </div>
         </div>
       </div>
 
     </main>
   </div>
-
   <script>
-    document.querySelectorAll('[id$="-displayed"]:not([disabled])').forEach(function(displayed) {
-      var requiredId = displayed.id.replace('-displayed', '-required');
-      var required = document.getElementById(requiredId);
-      if (!required) return;
-      displayed.addEventListener('change', function() {
-        required.disabled = !this.checked;
-        if (!this.checked) required.checked = false;
-      });
-    });
+    function updateAttestationCounter(textarea) {
+      var remaining = 5000 - textarea.value.length;
+      document.getElementById('attestationCounter').textContent = remaining + ' characters left';
+    }
   </script>
 </body>
 

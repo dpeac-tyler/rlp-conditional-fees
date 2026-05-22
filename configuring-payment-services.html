@@ -64,6 +64,21 @@
       </div>
     </div>
 
+    <div class="app-info-bar">
+      <div class="grid-container">
+        <div class="app-info-bar__grid">
+          <div>
+            <span class="app-info-bar__label">Application/Permit Name:</span>
+            <span class="app-info-bar__value">Application Builder Application</span>
+          </div>
+          <div>
+            <span class="app-info-bar__label">License/Application Type:</span>
+            <span class="app-info-bar__value">Application Builder : AP : Authenticated, Individual, Signature, Document Upload</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main id="main-content" class="grid-container">
       <div class="usa-step-indicator margin-top-4" aria-label="progress">
         <ol class="usa-step-indicator__segments">
@@ -138,6 +153,95 @@
         <div class="app-builder-content">
           <h1 class="app-builder-content__heading">Configuring Payment Services</h1>
 
+          <p class="app-builder-content__text">Please select from the available Service Codes for each payment type.</p>
+
+          <div class="fee-section">
+            <div class="fee-gray-container">
+              <div class="fee-white-container">
+                <h2 class="fee-section-heading">Fee List</h2>
+                <p class="app-builder-content__text">Below, choose the Payment Methods and Service Codes for this application.</p>
+
+                <!-- Credit Card -->
+                <div class="payment-method-section">
+                  <h2 class="payment-method-heading">Credit Card</h2>
+                  <hr>
+                  <div class="payment-method-fields">
+                    <div>
+                      <span class="usa-label">&nbsp;</span>
+                      <div class="usa-checkbox">
+                        <input class="usa-checkbox__input" id="pm-credit" type="checkbox" checked onchange="toggleServiceCode(this, 'sc-credit')">
+                        <label class="usa-checkbox__label" for="pm-credit">Credit Card</label>
+                      </div>
+                    </div>
+                    <div class="usa-form-group">
+                      <label class="usa-label" for="sc-credit">Service Code <span class="field-required">Required</span></label>
+                      <select class="usa-select" id="sc-credit">
+                        <option value="">Please Select</option>
+                        <option value="SC-001">Service Code 001</option>
+                        <option value="SC-002">Service Code 002</option>
+                        <option value="SC-003">Service Code 003</option>
+                        <option value="SC-004">Service Code 004</option>
+                        <option value="SC-005">Service Code 005</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ACH -->
+                <div class="payment-method-section">
+                  <h2 class="payment-method-heading">ACH</h2>
+                  <hr>
+                  <div class="payment-method-fields">
+                    <div>
+                      <span class="usa-label">&nbsp;</span>
+                      <div class="usa-checkbox">
+                        <input class="usa-checkbox__input" id="pm-ach" type="checkbox" onchange="toggleServiceCode(this, 'sc-ach')">
+                        <label class="usa-checkbox__label" for="pm-ach">ACH</label>
+                      </div>
+                    </div>
+                    <div class="usa-form-group">
+                      <label class="usa-label" for="sc-ach">Service Code <span class="field-required">Required</span></label>
+                      <select class="usa-select" id="sc-ach" disabled>
+                        <option value="">Please Select</option>
+                        <option value="SC-001">Service Code 001</option>
+                        <option value="SC-002">Service Code 002</option>
+                        <option value="SC-003">Service Code 003</option>
+                        <option value="SC-004">Service Code 004</option>
+                        <option value="SC-005">Service Code 005</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Paper -->
+                <div class="payment-method-section">
+                  <h2 class="payment-method-heading">Paper</h2>
+                  <hr>
+                  <div class="payment-method-fields">
+                    <div>
+                      <span class="usa-label">&nbsp;</span>
+                      <div class="usa-checkbox">
+                        <input class="usa-checkbox__input" id="pm-paper" type="checkbox" onchange="toggleServiceCode(this, 'sc-paper')">
+                        <label class="usa-checkbox__label" for="pm-paper">Paper</label>
+                      </div>
+                    </div>
+                    <div class="usa-form-group">
+                      <label class="usa-label" for="sc-paper">Service Code <span class="field-required">Required</span></label>
+                      <select class="usa-select" id="sc-paper" disabled>
+                        <option value="">Please Select</option>
+                        <option value="SC-001">Service Code 001</option>
+                        <option value="SC-002">Service Code 002</option>
+                        <option value="SC-003">Service Code 003</option>
+                        <option value="SC-004">Service Code 004</option>
+                        <option value="SC-005">Service Code 005</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="app-builder-button-container">
             <a href="endorsements.html" class="usa-button usa-button--outline">Back</a>
             <a href="payment-preview.html" class="usa-button">Next</a>
@@ -147,6 +251,11 @@
 
     </main>
   </div>
+  <script>
+    function toggleServiceCode(checkbox, selectId) {
+      document.getElementById(selectId).disabled = !checkbox.checked;
+    }
+  </script>
 </body>
 
 </html>

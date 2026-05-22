@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Information - RLP</title>
+  <title>Application Preview - RLP</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -85,19 +85,19 @@
           <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="document-upload.html">Application Details</a>
           </li>
-          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="user-information.html">Applicant Information</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="question-builder.html">Question Builder</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Conditions</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="conditions.html">Conditions</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Payment</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="payment-section.html">Payment</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
             <span class="usa-step-indicator__segment-label">Preview</span>
           </li>
           <li class="usa-step-indicator__segment">
@@ -111,9 +111,9 @@
 
       <div class="usa-step-indicator__header">
         <h1 class="usa-step-indicator__heading">
-          <span class="usa-step-indicator__heading-counter">2</span>
+          <span class="usa-step-indicator__heading-counter">6</span>
           <span class="usa-step-indicator__total-steps">of 8</span>
-          <span class="usa-step-indicator__heading-text">Applicant Information</span>
+          <span class="usa-step-indicator__heading-text">Preview</span>
         </h1>
       </div>
 
@@ -122,24 +122,12 @@
         <div class="app-builder-sidebar">
           <div class="usa-step-indicator usa-step-indicator--sidebar" aria-label="step progress">
             <ol class="usa-step-indicator__segments">
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor: pointer;" onclick="window.location.href='electronic-signature.html'">
+                <span class="usa-step-indicator__segment-label">Electronic Signature</span>
+              </li>
+              <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-                <a class="usa-step-indicator__segment-label" href="user-information.html">User Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="personal-information.html">Personal Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="contact-information.html">Contact Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="mailing-address.html">Mailing Address</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="demographic-information.html">Demographic Information</a>
+                <span class="usa-step-indicator__segment-label">Application Preview</span>
               </li>
             </ol>
           </div>
@@ -147,36 +135,29 @@
 
         <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">User Information</h1>
+          <h1 class="app-builder-content__heading">Application Preview</h1>
 
-          <p class="app-builder-content__text">Congratulations! The first section of your application is complete and we've saved what you've done so far. Remember, draft applications are always available in the Draft area of your dashboard.</p>
+          <p class="app-builder-content__text">Almost done! We've saved what you've done so far. Remember, draft applications are always available in the Drafts area of your dashboard.</p>
 
-          <p class="app-builder-content__text">Now let's create fields for the personal and demographic information that you'll gather from users.</p>
+          <p class="app-builder-content__text">Let's take a look at your application! Click the "Preview" button below and we will show you the application you built in a new window. This will be a replica of what your constituent will see.</p>
+
+          <p class="app-builder-content__text">If you see something you don't like in the preview, you can go back and update the application. When you preview the application again, it will reflect that change.</p>
+
+          <p class="app-builder-content__text"><strong>NOTE:</strong> The application is non-functioning. This is just a preview of your application specifics.</p>
+
+          <div class="preview-button-row">
+            <button type="button" class="usa-button usa-button--big">Preview</button>
+          </div>
 
           <div class="app-builder-button-container">
-            <a href="personal-information.html" class="usa-button" style="margin-left: auto;">Next</a>
+            <a href="electronic-signature.html" class="usa-button usa-button--outline">Back</a>
+            <a href="certificate-section.html" class="usa-button">Next</a>
           </div>
         </div>
       </div>
 
     </main>
   </div>
-
-  <script>
-    document.querySelectorAll('.usa-accordion__button').forEach(function(button) {
-      button.addEventListener('click', function() {
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        var content = document.getElementById(this.getAttribute('aria-controls'));
-        if (expanded) {
-          this.setAttribute('aria-expanded', 'false');
-          content.setAttribute('hidden', '');
-        } else {
-          this.setAttribute('aria-expanded', 'true');
-          content.removeAttribute('hidden');
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>

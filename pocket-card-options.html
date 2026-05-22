@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payment Preview - RLP</title>
+  <title>Pocket Card Options - RLP</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -94,13 +94,13 @@
           <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="conditions.html">Conditions</a>
           </li>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="payment-section.html">Payment</a>
+          </li>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="electronic-signature.html">Preview</a>
+          </li>
           <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-            <span class="usa-step-indicator__segment-label">Payment</span>
-          </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Preview</span>
-          </li>
-          <li class="usa-step-indicator__segment">
             <span class="usa-step-indicator__segment-label">License</span>
           </li>
           <li class="usa-step-indicator__segment">
@@ -111,60 +111,107 @@
 
       <div class="usa-step-indicator__header">
         <h1 class="usa-step-indicator__heading">
-          <span class="usa-step-indicator__heading-counter">5</span>
+          <span class="usa-step-indicator__heading-counter">7</span>
           <span class="usa-step-indicator__total-steps">of 8</span>
-          <span class="usa-step-indicator__heading-text">Payment</span>
+          <span class="usa-step-indicator__heading-text">License</span>
         </h1>
       </div>
 
       <div class="margin-top-4 app-builder-container">
-        <!-- Left sidebar -->
         <div class="app-builder-sidebar">
           <div class="usa-step-indicator usa-step-indicator--sidebar" aria-label="step progress">
             <ol class="usa-step-indicator__segments">
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor: pointer;" onclick="window.location.href='payment-section.html'">
-                <span class="usa-step-indicator__segment-label">Payment Section</span>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-section.html'">
+                <span class="usa-step-indicator__segment-label">Certificate Section</span>
               </li>
               <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor: pointer;" onclick="window.location.href='application-license-fees.html'">
-                <span class="usa-step-indicator__segment-label">Application and License Fees</span>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-dates.html'">
+                <span class="usa-step-indicator__segment-label">Dates</span>
               </li>
               <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor: pointer;" onclick="window.location.href='additional-items.html'">
-                <span class="usa-step-indicator__segment-label">Additional Items</span>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-options.html'">
+                <span class="usa-step-indicator__segment-label">Certificate Options</span>
               </li>
               <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor: pointer;" onclick="window.location.href='endorsements.html'">
-                <span class="usa-step-indicator__segment-label">Endorsements</span>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor: pointer;" onclick="window.location.href='configuring-payment-services.html'">
-                <span class="usa-step-indicator__segment-label">Configuring Payment Services</span>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-disclaimer.html'">
+                <span class="usa-step-indicator__segment-label">Certificate Disclaimer</span>
               </li>
               <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-                <span class="usa-step-indicator__segment-label">Preview</span>
+                <span class="usa-step-indicator__segment-label">Pocket Card Options</span>
               </li>
             </ol>
           </div>
         </div>
 
-        <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">Fees Preview</h1>
+          <h1 class="app-builder-content__heading">Pocket Card Options</h1>
 
-          <p class="app-builder-content__text">Here's what the Fees will look like. If you like what you see, click Confirm. If you don't, just click Back to make changes.</p>
+          <p class="app-builder-content__text app-builder-content__text--lg-margin">
+            Welcome to the pocket card options page. Select one of the templates offered below. Templates will be pre-populated with the information the user provided during the application process.
+          </p>
 
-          <p class="app-builder-content__text"><strong>NOTE:</strong> This is just a preview – it isn't functional yet.</p>
+          <div class="section-indicator" data-section="5">
+            <h2 class="app-builder-content__subheading" style="font-size: 2.2rem;">Pocket Card Options</h2>
 
-          <div class="preview-container">
-            <div class="preview-container__header">Summary</div>
-            <div class="preview-container__body">Fee Summary information in here.</div>
+            <div class="section-indicator section-indicator--small" data-section="1" style="background-color: #fff; padding: 2.4rem 2.4rem 2.4rem 5rem; border: 1px solid #dfe1e2; border-radius: 0.5rem; margin-top: 2rem;">
+              <div style="display: flex; gap: 2rem; align-items: stretch;">
+                <div style="flex: 1; border-right: 1px solid #dfe1e2; padding-right: 2rem;">
+                  <div class="usa-radio">
+                    <input class="usa-radio__input" id="pocket-template-simple" type="radio" name="pocket-template" value="simple">
+                    <label class="usa-radio__label" for="pocket-template-simple">Pocket Card Template - Simple</label>
+                  </div>
+                  <img src="assets/pocket card - simple.png" alt="Pocket Card Simple template preview" style="max-width: 100%; margin-top: 1rem;">
+                </div>
+                <div style="flex: 1;">
+                  <div class="usa-radio">
+                    <input class="usa-radio__input" id="pocket-template-detailed" type="radio" name="pocket-template" value="detailed">
+                    <label class="usa-radio__label" for="pocket-template-detailed">Pocket Card Template - Detailed</label>
+                  </div>
+                  <img src="assets/pocket card - ipe.png" alt="Pocket Card Detailed template preview" style="max-width: 100%; margin-top: 1rem;">
+                </div>
+              </div>
+
+              <div style="margin-top: 2rem;">
+                <div class="usa-form-group" style="margin-bottom: 20px;">
+                  <label class="usa-label" for="pocket-photo-upload-instructions">Pocket Card Upload Instructions <span class="field-required">Required</span></label>
+                  <div class="mock-editor">
+                    <div class="mock-editor__toolbar">
+                      <button type="button" class="mock-editor__btn" title="Bold"><strong>B</strong></button>
+                      <button type="button" class="mock-editor__btn" title="Italic"><em>I</em></button>
+                      <button type="button" class="mock-editor__btn" title="Underline"><u>U</u></button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Numbered List">1.</button>
+                      <button type="button" class="mock-editor__btn" title="Bullet List">•</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Link">&#128279;</button>
+                    </div>
+                    <textarea class="mock-editor__textarea" id="pocket-photo-upload-instructions" name="pocket-photo-upload-instructions" rows="6"></textarea>
+                  </div>
+                </div>
+                <div class="usa-form-group">
+                  <label class="usa-label" for="pocket-photo-upload-disclaimer">Pocket Card Upload Disclaimer <span class="field-required">Required</span></label>
+                  <div class="mock-editor">
+                    <div class="mock-editor__toolbar">
+                      <button type="button" class="mock-editor__btn" title="Bold"><strong>B</strong></button>
+                      <button type="button" class="mock-editor__btn" title="Italic"><em>I</em></button>
+                      <button type="button" class="mock-editor__btn" title="Underline"><u>U</u></button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Numbered List">1.</button>
+                      <button type="button" class="mock-editor__btn" title="Bullet List">•</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Link">&#128279;</button>
+                    </div>
+                    <textarea class="mock-editor__textarea" id="pocket-photo-upload-disclaimer" name="pocket-photo-upload-disclaimer" rows="6"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="app-builder-button-container">
-            <a href="configuring-payment-services.html" class="usa-button usa-button--outline">Back</a>
-            <a href="electronic-signature.html" class="usa-button">Confirm</a>
+            <a href="certificate-disclaimer.html" class="usa-button usa-button--outline">Back</a>
+            <a href="notification.html" class="usa-button">Next</a>
           </div>
         </div>
       </div>

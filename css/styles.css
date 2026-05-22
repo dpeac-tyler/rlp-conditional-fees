@@ -2354,6 +2354,69 @@ a.usa-step-indicator__segment-label:hover {
   gap: 1rem;
 }
 
+.app-builder-button-container--right {
+  justify-content: flex-end;
+}
+
+.app-info-bar {
+  padding: 2rem 0;
+}
+
+.app-info-bar__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.app-info-bar__label {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.app-info-bar__value {
+  font-size: 2rem;
+  font-weight: 400;
+  display: block;
+}
+
+.completion-content {
+  max-width: 800px;
+  margin: 4rem auto;
+}
+
+.completion-whats-next {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.completion-list {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.section-image {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.preview-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.usa-button--big {
+  border-radius: .25rem;
+  font-size: 2rem;
+  padding: 1.2rem 2.5rem;
+}
+
 .usa-step-indicator--sidebar .usa-step-indicator__segment--complete::after {
   background-color: var(--step-indicator-complete-bar-color);
 }
@@ -3093,7 +3156,7 @@ a.usa-step-indicator__segment-label:hover {
 }
 
 .fee-questions-section .section-indicator {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 /* Fee row grid (inside each section-indicator) */
@@ -3102,6 +3165,69 @@ a.usa-step-indicator__segment-label:hover {
   grid-template-columns: 1fr 1fr 1fr auto;
   gap: 2rem;
   align-items: start;
+}
+
+.additional-item-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.endorsement-row-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.preview-container {
+  border: 1px solid #dfe1e2;
+  margin-bottom: 2rem;
+}
+
+.preview-container__header {
+  background-color: #112e51;
+  padding: 1.5rem 2.2rem;
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.preview-container__body {
+  background-color: #fff;
+  padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+}
+
+.payment-method-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.payment-method-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.payment-method-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: end;
+}
+
+.payment-method-section hr {
+  margin-bottom: 15px;
+}
+
+.endorsement-add-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 20px;
 }
 
 /* Character counter beneath fee name inputs */
@@ -3125,6 +3251,12 @@ a.usa-step-indicator__segment-label:hover {
   margin-top: 1.5rem;
 }
 
+.additional-items-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
 .fee-delete-btn {
   background: none;
   border: none;
@@ -3139,7 +3271,12 @@ a.usa-step-indicator__segment-label:hover {
 }
 
 .fee-row-wrapper {
+  background-color: #fff;
   border-bottom: 20px solid #fff;
   border-radius: 0;
-  
+}
+
+.fee-row-wrapper--gray {
+  background-color: #f0f0f0;
+  border-bottom-color: #f0f0f0;
 }

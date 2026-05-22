@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Information - RLP</title>
+  <title>Certificate Options - RLP</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -85,22 +85,22 @@
           <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="document-upload.html">Application Details</a>
           </li>
-          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="user-information.html">Applicant Information</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="question-builder.html">Question Builder</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Conditions</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="conditions.html">Conditions</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Payment</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="payment-section.html">Payment</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Preview</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="electronic-signature.html">Preview</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
             <span class="usa-step-indicator__segment-label">License</span>
           </li>
           <li class="usa-step-indicator__segment">
@@ -111,138 +111,113 @@
 
       <div class="usa-step-indicator__header">
         <h1 class="usa-step-indicator__heading">
-          <span class="usa-step-indicator__heading-counter">2</span>
+          <span class="usa-step-indicator__heading-counter">7</span>
           <span class="usa-step-indicator__total-steps">of 8</span>
-          <span class="usa-step-indicator__heading-text">Applicant Information</span>
+          <span class="usa-step-indicator__heading-text">License</span>
         </h1>
       </div>
 
       <div class="margin-top-4 app-builder-container">
-        <!-- Left sidebar -->
         <div class="app-builder-sidebar">
           <div class="usa-step-indicator usa-step-indicator--sidebar" aria-label="step progress">
             <ol class="usa-step-indicator__segments">
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
-                <a class="usa-step-indicator__segment-label" href="user-information.html">User Information</a>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-section.html'">
+                <span class="usa-step-indicator__segment-label">Certificate Section</span>
               </li>
               <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
-                <a class="usa-step-indicator__segment-label" href="personal-information.html">Personal Information</a>
+              <li class="usa-step-indicator__segment usa-step-indicator__segment--complete" style="cursor:pointer;" onclick="window.location.href='certificate-dates.html'">
+                <span class="usa-step-indicator__segment-label">Dates</span>
               </li>
               <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-                <a class="usa-step-indicator__segment-label" href="contact-information.html">Contact Information</a>
+                <span class="usa-step-indicator__segment-label">Certificate Options</span>
               </li>
               <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="mailing-address.html">Mailing Address</a>
+                <span class="usa-step-indicator__segment-label">Certificate Disclaimer</span>
               </li>
               <div class="step-connector-line"></div>
               <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="demographic-information.html">Demographic Information</a>
+                <span class="usa-step-indicator__segment-label">Pocket Card Options</span>
               </li>
             </ol>
           </div>
         </div>
 
-        <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">Contact Information</h1>
+          <h1 class="app-builder-content__heading">Certificate Options</h1>
 
-          <p class="app-builder-content__text">Now you can determine what contact information you want to gather from users.</p>
+          <p class="app-builder-content__text app-builder-content__text--lg-margin">
+            Welcome to the Certificate options page. Select one of the templates offered below. Templates will be pre-populated with information the user provided during the application process.
+          </p>
 
-          <p class="app-builder-content__text">Check "Displayed" for the items that you want to appear on the application. Check "Required" for the information that users must provide; otherwise, it will be considered optional.</p>
+          <div class="section-indicator" data-section="3">
+            <h2 class="app-builder-content__subheading" style="font-size: 2.2rem;">Certificate Options</h2>
 
-          <!-- Section 2: Contact Information -->
-          <div class="section-indicator" data-section="2">
-
-            <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem;">Contact Information</h2>
-
-            <!-- Column headers -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #dfe1e2; margin-bottom: 1rem;">
-              <div style="font-weight: 700; font-size: 1.6rem;">Title</div>
-              <div style="font-weight: 700; font-size: 1.6rem;">Description</div>
-              <div style="font-weight: 700; font-size: 1.6rem;">Displayed</div>
-              <div style="font-weight: 700; font-size: 1.6rem;">Required</div>
-            </div>
-
-            <!-- Row 1: Telephone Number -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0;">
-              <div style="font-size: 1.6rem;">Telephone Number</div>
-              <div style="font-size: 1.6rem; color: #71767a;">Primary Phone Number</div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="telephone-displayed" type="checkbox" name="telephone-displayed" checked disabled>
-                  <label class="usa-checkbox__label" for="telephone-displayed"></label>
+            <div class="section-indicator section-indicator--small" data-section="1" style="background-color: #fff; padding: 2.4rem 2.4rem 2.4rem 5rem; border: 1px solid #dfe1e2; border-radius: 0.5rem; margin-top: 2rem;">
+              <h3>Simple - Landscape</h3>
+              <hr>
+              <div style="display: flex; gap: 2rem; align-items: stretch;">
+                <div style="flex: 3; border-right: 1px solid #dfe1e2; padding-right: 2rem;">
+                  <div class="usa-radio">
+                    <input class="usa-radio__input" id="template-simple-landscape" type="radio" name="cert-template" value="simple-landscape">
+                    <label class="usa-radio__label" for="template-simple-landscape">Simple - Landscape</label>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="telephone-required" type="checkbox" name="telephone-required" checked>
-                  <label class="usa-checkbox__label" for="telephone-required"></label>
+                <div style="flex: 7;">
+                  <p>Select this option for a simplified view of the Certificate information. This includes items such as Agency Name, Agency Logo, Start Dates, Expiration Dates, Customer Information, Transaction Number and Total.</p>
+                  <p><strong>Preview</strong></p>
+                  <img src="assets/simplelandscapetemplate-t.png" alt="Simple Landscape template preview" style="max-width: 100%;">
                 </div>
               </div>
             </div>
 
-            <!-- Row 2: Alt. Telephone Number -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0;">
-              <div style="font-size: 1.6rem;">Alt. Telephone Number</div>
-              <div style="font-size: 1.6rem; color: #71767a;">Alternate Phone Number</div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="altphone-displayed" type="checkbox" name="altphone-displayed">
-                  <label class="usa-checkbox__label" for="altphone-displayed"></label>
+            <div class="section-indicator section-indicator--small" data-section="2" style="background-color: #fff; padding: 2.4rem 2.4rem 2.4rem 5rem; border: 1px solid #dfe1e2; border-radius: 0.5rem; margin-top: 2rem;">
+              <h3>Simple - Portrait</h3>
+              <hr>
+              <div style="display: flex; gap: 2rem; align-items: stretch;">
+                <div style="flex: 3; border-right: 1px solid #dfe1e2; padding-right: 2rem;">
+                  <div class="usa-radio">
+                    <input class="usa-radio__input" id="template-simple-portrait" type="radio" name="cert-template" value="simple-portrait">
+                    <label class="usa-radio__label" for="template-simple-portrait">Simple - Portrait</label>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="altphone-required" type="checkbox" name="altphone-required" disabled>
-                  <label class="usa-checkbox__label" for="altphone-required"></label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Row 3: Email Address -->
-            <div style="display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 2rem; align-items: center; padding: 2rem 0;">
-              <div style="font-size: 1.6rem;">Email Address</div>
-              <div style="font-size: 1.6rem; color: #71767a;">Email Address</div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="email-displayed" type="checkbox" name="email-displayed" checked disabled>
-                  <label class="usa-checkbox__label" for="email-displayed"></label>
-                </div>
-              </div>
-              <div>
-                <div class="usa-checkbox">
-                  <input class="usa-checkbox__input" id="email-required" type="checkbox" name="email-required" checked disabled>
-                  <label class="usa-checkbox__label" for="email-required"></label>
+                <div style="flex: 7;">
+                  <p>Same selection as Template 1 but introduced in a portrait format.</p>
+                  <p><strong>Preview</strong></p>
+                  <img src="assets/simpleportraittemplate-t.png" alt="Simple Portrait template preview" style="max-width: 100%;">
                 </div>
               </div>
             </div>
 
+            <div class="section-indicator section-indicator--small" data-section="3" style="background-color: #fff; padding: 2.4rem 2.4rem 2.4rem 5rem; border: 1px solid #dfe1e2; border-radius: 0.5rem; margin-top: 2rem;">
+              <h3>Individual Color Coded - Landscape</h3>
+              <hr>
+              <div style="display: flex; gap: 2rem; align-items: stretch;">
+                <div style="flex: 3; border-right: 1px solid #dfe1e2; padding-right: 2rem;">
+                  <div class="usa-radio">
+                    <input class="usa-radio__input" id="template-individual-color-landscape" type="radio" name="cert-template" value="individual-color-landscape">
+                    <label class="usa-radio__label" for="template-individual-color-landscape">Individual Color Coded - Landscape</label>
+                  </div>
+                </div>
+                <div style="flex: 7;">
+                  <p>Select this option for a color coded view of the Certificate information. This includes items such as Agency Logo, Expiration Date, Customer Information and License Number.</p>
+                  <p><strong>Preview</strong></p>
+                  <img src="assets/individualcoloredlandscapetemplate-t.png" alt="Individual Color Coded Landscape template preview" style="max-width: 100%;">
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="app-builder-button-container">
-            <a href="personal-information-preview.html" class="usa-button usa-button--outline">Back</a>
-            <a href="contact-information-preview.html" class="usa-button">Next</a>
+            <a href="certificate-dates.html" class="usa-button usa-button--outline">Back</a>
+            <a href="certificate-disclaimer.html" class="usa-button">Next</a>
           </div>
         </div>
       </div>
 
     </main>
   </div>
-
-  <script>
-    document.querySelectorAll('[id$="-displayed"]:not([disabled])').forEach(function(displayed) {
-      var requiredId = displayed.id.replace('-displayed', '-required');
-      var required = document.getElementById(requiredId);
-      if (!required) return;
-      displayed.addEventListener('change', function() {
-        required.disabled = !this.checked;
-        if (!this.checked) required.checked = false;
-      });
-    });
-  </script>
 </body>
 
 </html>

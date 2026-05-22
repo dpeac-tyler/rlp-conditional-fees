@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Information - RLP</title>
+  <title>Notification - RLP</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -85,25 +85,25 @@
           <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="document-upload.html">Application Details</a>
           </li>
-          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="user-information.html">Applicant Information</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
             <a class="usa-step-indicator__segment-label" href="question-builder.html">Question Builder</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Conditions</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="conditions.html">Conditions</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Payment</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="payment-section.html">Payment</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">Preview</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="electronic-signature.html">Preview</a>
           </li>
-          <li class="usa-step-indicator__segment">
-            <span class="usa-step-indicator__segment-label">License</span>
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+            <a class="usa-step-indicator__segment-label" href="certificate-section.html">License</a>
           </li>
-          <li class="usa-step-indicator__segment">
+          <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
             <span class="usa-step-indicator__segment-label">Notification</span>
           </li>
         </ol>
@@ -111,71 +111,64 @@
 
       <div class="usa-step-indicator__header">
         <h1 class="usa-step-indicator__heading">
-          <span class="usa-step-indicator__heading-counter">2</span>
+          <span class="usa-step-indicator__heading-counter">8</span>
           <span class="usa-step-indicator__total-steps">of 8</span>
-          <span class="usa-step-indicator__heading-text">Applicant Information</span>
+          <span class="usa-step-indicator__heading-text">Notification</span>
         </h1>
       </div>
 
       <div class="margin-top-4 app-builder-container">
-        <!-- Left sidebar -->
         <div class="app-builder-sidebar">
           <div class="usa-step-indicator usa-step-indicator--sidebar" aria-label="step progress">
             <ol class="usa-step-indicator__segments">
               <li class="usa-step-indicator__segment usa-step-indicator__segment--current">
-                <a class="usa-step-indicator__segment-label" href="user-information.html">User Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="personal-information.html">Personal Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="contact-information.html">Contact Information</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="mailing-address.html">Mailing Address</a>
-              </li>
-              <div class="step-connector-line"></div>
-              <li class="usa-step-indicator__segment">
-                <a class="usa-step-indicator__segment-label" href="demographic-information.html">Demographic Information</a>
+                <span class="usa-step-indicator__segment-label">Notification</span>
               </li>
             </ol>
           </div>
         </div>
 
-        <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">User Information</h1>
+          <h1 class="app-builder-content__heading">Notification</h1>
 
-          <p class="app-builder-content__text">Congratulations! The first section of your application is complete and we've saved what you've done so far. Remember, draft applications are always available in the Draft area of your dashboard.</p>
+          <p class="app-builder-content__text">The user will receive this email notification on the submission date if there is no review or the approval date if there is a review.</p>
 
-          <p class="app-builder-content__text">Now let's create fields for the personal and demographic information that you'll gather from users.</p>
+          <p class="app-builder-content__text">In addition to the standard system-generated email, you can add other notifications, declarations, or important information to the message. This is optional, and it can be added, changed, or deleted at any time.</p>
 
-          <div class="app-builder-button-container">
-            <a href="personal-information.html" class="usa-button" style="margin-left: auto;">Next</a>
+          <p class="app-builder-content__text">If you want to add a notification, complete the fields below.</p>
+
+          <p class="app-builder-content__text">When you're ready, click Finish and you're done!</p>
+
+          <div class="section-indicator margin-top-4" data-section="1">
+            <h2>Notification Options</h2>
+
+            <div class="usa-form-group">
+              <label class="usa-label" for="notificationTitle">Notification Title</label>
+              <input class="usa-input" id="notificationTitle" type="text">
+            </div>
+
+            <div class="usa-form-group">
+              <label class="usa-label" for="notificationDescription">Notification Description</label>
+              <textarea class="usa-textarea" id="notificationDescription" maxlength="1000" rows="6" oninput="updateNotificationCounter(this)"></textarea>
+              <span class="fee-char-count" id="notificationCounter">1000 of 1000 remaining</span>
+            </div>
+
+            <img src="assets/agency-notification-screen.png" alt="Agency notification screen" class="section-image">
+          </div>
+
+          <div class="app-builder-button-container app-builder-button-container--right">
+            <a href="application-complete.html" class="usa-button">Finish</a>
           </div>
         </div>
       </div>
 
     </main>
   </div>
-
   <script>
-    document.querySelectorAll('.usa-accordion__button').forEach(function(button) {
-      button.addEventListener('click', function() {
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        var content = document.getElementById(this.getAttribute('aria-controls'));
-        if (expanded) {
-          this.setAttribute('aria-expanded', 'false');
-          content.setAttribute('hidden', '');
-        } else {
-          this.setAttribute('aria-expanded', 'true');
-          content.removeAttribute('hidden');
-        }
-      });
-    });
+    function updateNotificationCounter(textarea) {
+      var remaining = 1000 - textarea.value.length;
+      document.getElementById('notificationCounter').textContent = remaining + ' of 1000 remaining';
+    }
   </script>
 </body>
 

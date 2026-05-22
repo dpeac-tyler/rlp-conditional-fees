@@ -64,6 +64,21 @@
       </div>
     </div>
 
+    <div class="app-info-bar">
+      <div class="grid-container">
+        <div class="app-info-bar__grid">
+          <div>
+            <span class="app-info-bar__label">Application/Permit Name:</span>
+            <span class="app-info-bar__value">Application Builder Application</span>
+          </div>
+          <div>
+            <span class="app-info-bar__label">License/Application Type:</span>
+            <span class="app-info-bar__value">Application Builder : AP : Authenticated, Individual, Signature, Document Upload</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main id="main-content" class="grid-container">
       <div class="usa-step-indicator margin-top-4" aria-label="progress">
         <ol class="usa-step-indicator__segments">
@@ -136,7 +151,98 @@
 
         <!-- Right content area -->
         <div class="app-builder-content">
-          <h1 class="app-builder-content__heading">Endorsements</h1>
+          <h1 class="app-builder-content__heading">Application Sub-License/Endorsement Options</h1>
+
+          <p class="app-builder-content__text">Enter the appropriate endorsement names and fees. You can add up to twenty (20) different endorsements. Also make sure to indicate if this endorsement needs to appear on the user's certificate.</p>
+
+          <!-- Icon Key -->
+          <div class="usa-accordion usa-accordion--bordered margin-top-2">
+            <h3 class="usa-accordion__heading">
+              <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="icon-key-endorsements">
+                Icon Key
+              </button>
+            </h3>
+            <div id="icon-key-endorsements" class="usa-accordion__content usa-prose" hidden>
+              <div class="icon-key-grid">
+                <div class="icon-key-item">
+                  <img src="assets/icon-delete.png" alt="" width="24" height="24">
+                  <span>- Delete Row</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Endorsements section -->
+          <div class="fee-section">
+            <div class="fee-gray-container">
+              <div class="fee-white-container">
+                <h2 class="fee-section-heading">Application Sub-License/Endorsement</h2>
+
+                <p class="app-builder-content__text">Use the field below to provide users with general information or more detailed instructions that will help them understand the Endorsements section of the application.</p>
+
+                <div class="usa-form-group">
+                  <label class="usa-label" for="endorsementsDesc">Endorsements Description</label>
+                  <div class="mock-editor">
+                    <div class="mock-editor__toolbar">
+                      <button type="button" class="mock-editor__btn" title="Undo">↩</button>
+                      <button type="button" class="mock-editor__btn" title="Redo">↪</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Style" style="font-size:1.2rem;">Normal ▾</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Bold"><strong>B</strong></button>
+                      <button type="button" class="mock-editor__btn" title="Italic"><em>I</em></button>
+                      <button type="button" class="mock-editor__btn" title="Underline"><u>U</u></button>
+                      <button type="button" class="mock-editor__btn" title="Text Color"><u style="text-decoration-color:#e00; text-decoration-thickness:2px;">A</u></button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Link">&#128279;</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Bullet List">&#8226;&#8801;</button>
+                      <button type="button" class="mock-editor__btn" title="Numbered List">1.&#8801;</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Horizontal Rule">—</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Align Left">&#8676;</button>
+                      <button type="button" class="mock-editor__btn" title="Align Right">&#8677;</button>
+                      <span class="mock-editor__separator">|</span>
+                      <button type="button" class="mock-editor__btn" title="Blockquote">&ldquo;</button>
+                      <button type="button" class="mock-editor__btn" title="Clear Formatting">T&#x2093;</button>
+                    </div>
+                    <textarea class="mock-editor__textarea" id="endorsementsDesc" maxlength="1000" rows="4" oninput="updateEndorsementsDesc(this)"></textarea>
+                  </div>
+                  <span class="fee-char-count" id="endorsementsCounter">1000 characters left</span>
+                </div>
+
+                <p class="app-builder-content__text">Check the &ldquo;Certificate&rdquo; checkbox to make the Endorsement appear on the certificate.</p>
+
+                <div class="fee-questions-section">
+                  <div id="endorsementRows"></div>
+                </div>
+
+                <div class="endorsement-add-row">
+                  <button type="button" class="usa-button usa-button--accent-warm" onclick="addEndorsementRow()">Add Endorsement</button>
+                  <span>For the endorsements listed above, a user can select one (1) or multiple endorsements.</span>
+                </div>
+
+                <div class="usa-form-group margin-top-4">
+                  <div class="usa-checkbox margin-bottom-2">
+                    <input class="usa-checkbox__input" id="endorse-one" type="checkbox" name="endorseQty" value="one">
+                    <label class="usa-checkbox__label" for="endorse-one">One</label>
+                  </div>
+                  <div class="usa-checkbox margin-bottom-2">
+                    <input class="usa-checkbox__input" id="endorse-more" type="checkbox" name="endorseQty" value="more">
+                    <label class="usa-checkbox__label" for="endorse-more">More than One</label>
+                  </div>
+                  <div class="usa-checkbox margin-top-3">
+                    <input class="usa-checkbox__input" id="endorse-required" type="checkbox" name="endorseRequired" value="required">
+                    <label class="usa-checkbox__label" for="endorse-required">Check this box if at least one Sub-License/Endorsement is required</label>
+                  </div>
+                </div>
+              </div>
+              <div class="fee-clear-row">
+                <button type="button" class="usa-button usa-button--accent-cool">Clear</button>
+              </div>
+            </div>
+          </div>
 
           <div class="app-builder-button-container">
             <a href="additional-items.html" class="usa-button usa-button--outline">Back</a>
@@ -147,6 +253,96 @@
 
     </main>
   </div>
+  <script>
+    var endorsementCount = 1;
+
+    var skuOptions =
+      '<option value="">Please Select</option>' +
+      '<option value="SKU-0001">SKU-0001</option>' +
+      '<option value="SKU-0002">SKU-0002</option>' +
+      '<option value="SKU-0003">SKU-0003</option>' +
+      '<option value="SKU-0004">SKU-0004</option>' +
+      '<option value="SKU-0005">SKU-0005</option>';
+
+    window.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.usa-accordion__button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          document.getElementById(this.getAttribute('aria-controls')).hidden = expanded;
+          this.setAttribute('aria-expanded', String(!expanded));
+        });
+      });
+
+      document.getElementById('endorsementRows').innerHTML = buildEndorsementRowHTML(0);
+    });
+
+    function buildEndorsementRowHTML(idx) {
+      return (
+        '<div class="section-indicator section-indicator--small fee-row-wrapper fee-row-wrapper--gray" data-section="' + (idx + 1) + '">' +
+          '<div class="endorsement-row-grid">' +
+            '<div>' +
+              '<label class="usa-label">SKU</label>' +
+              '<select class="usa-select">' + skuOptions + '</select>' +
+            '</div>' +
+            '<div>' +
+              '<label class="usa-label">Endorsement Name</label>' +
+              '<input class="usa-input fee-name-input" type="text" maxlength="50" oninput="updateEndorsementCounter(this)">' +
+              '<span class="fee-char-count">50 of 50 remaining</span>' +
+            '</div>' +
+            '<div>' +
+              '<label class="usa-label">Price Point</label>' +
+              '<input class="usa-input" type="text" value="$0.00">' +
+            '</div>' +
+            '<div>' +
+              '<label class="usa-label">Certificate</label>' +
+              '<input type="checkbox" style="width:20px; height:20px; margin-top:0.75rem; display:block;">' +
+            '</div>' +
+            '<div class="fee-delete-col">' +
+              '<button type="button" class="fee-delete-btn" onclick="deleteEndorsementRow(this)" title="Delete Row" style="display:none;">' +
+                '<img src="assets/icon-delete.png" alt="Delete Row" width="24" height="24">' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    function addEndorsementRow() {
+      if (endorsementCount >= 20) {
+        alert('You can add up to twenty (20) different endorsements.');
+        return;
+      }
+      document.getElementById('endorsementRows').insertAdjacentHTML('beforeend', buildEndorsementRowHTML(endorsementCount));
+      endorsementCount++;
+      updateAllEndorsementDeleteBtns();
+    }
+
+    function deleteEndorsementRow(btn) {
+      btn.closest('.fee-row-wrapper').remove();
+      endorsementCount--;
+      updateAllEndorsementDeleteBtns();
+      document.querySelectorAll('#endorsementRows .fee-row-wrapper').forEach(function (row, i) {
+        row.setAttribute('data-section', i + 1);
+      });
+    }
+
+    function updateAllEndorsementDeleteBtns() {
+      document.querySelectorAll('#endorsementRows .fee-delete-btn').forEach(function (btn) {
+        btn.style.display = endorsementCount > 1 ? '' : 'none';
+      });
+    }
+
+    function updateEndorsementsDesc(textarea) {
+      var remaining = 1000 - textarea.value.length;
+      document.getElementById('endorsementsCounter').textContent = remaining + ' characters left';
+    }
+
+    function updateEndorsementCounter(input) {
+      var counter = input.nextElementSibling;
+      var remaining = 50 - input.value.length;
+      counter.textContent = remaining + ' of 50 remaining';
+    }
+  </script>
 </body>
 
 </html>
