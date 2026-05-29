@@ -3280,3 +3280,38 @@ a.usa-step-indicator__segment-label:hover {
   background-color: #f0f0f0;
   border-bottom-color: #f0f0f0;
 }
+
+/* Business Contacts reveal
+   ========================================================================== */
+
+.contacts-reveal {
+  display: none;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #dfe1e2;
+}
+
+.contacts-reveal.is-visible {
+  display: block;
+}
+
+.contacts-sub-table-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #dfe1e2;
+  margin-bottom: 1rem;
+  margin-top: 2.4rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.contacts-sub-table-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  font-size: 1.6rem;
+}

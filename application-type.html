@@ -290,13 +290,23 @@
 
           <div class="app-builder-button-container">
             <a href="start-application.html" class="usa-button usa-button--outline">Back</a>
-            <a href="title-information.html" class="usa-button">Next</a>
+            <button class="usa-button" onclick="goNext()">Next</button>
           </div>
         </div>
       </div>
 
     </main>
   </div>
+  <script>
+    function goNext() {
+      var selected = document.querySelector('input[name="application-for"]:checked');
+      if (selected && selected.value === 'business') {
+        window.location.href = 'business-introduction.html';
+      } else {
+        window.location.href = 'title-information.html';
+      }
+    }
+  </script>
 </body>
 
 </html>
