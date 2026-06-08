@@ -342,13 +342,17 @@
           return '<option value="' + p.originalIndex + '">' + escapeHtml(label) + '</option>';
         }).join('');
 
+      var doName = 'do-' + cardIndex + '-' + partIndex;
+      var onChange = 'toggleWaiveLabel(' + cardIndex + ',' + partIndex + ');checkSaveEnabled(' + cardIndex + ')';
+
       return (
         '<div class="part-panel condition-panel condition-panel--do" id="part-' + cardIndex + '-' + partIndex + '">' +
           '<div class="condition-row">' +
             '<span class="condition-label">Do</span>' +
             '<div class="radio-group-inline">' +
-              '<div class="usa-radio"><input class="usa-radio__input" id="do-' + cardIndex + '-' + partIndex + '-show" type="radio" name="do-' + cardIndex + '-' + partIndex + '" value="show"><label class="usa-radio__label" for="do-' + cardIndex + '-' + partIndex + '-show">Show</label></div>' +
-              '<div class="usa-radio"><input class="usa-radio__input" id="do-' + cardIndex + '-' + partIndex + '-hide" type="radio" name="do-' + cardIndex + '-' + partIndex + '" value="hide"><label class="usa-radio__label" for="do-' + cardIndex + '-' + partIndex + '-hide">Hide</label></div>' +
+              '<div class="usa-radio"><input class="usa-radio__input" id="do-' + cardIndex + '-' + partIndex + '-show" type="radio" name="' + doName + '" value="show" onchange="' + onChange + '"><label class="usa-radio__label" for="do-' + cardIndex + '-' + partIndex + '-show">Show</label></div>' +
+              '<div class="usa-radio"><input class="usa-radio__input" id="do-' + cardIndex + '-' + partIndex + '-hide" type="radio" name="' + doName + '" value="hide" onchange="' + onChange + '"><label class="usa-radio__label" for="do-' + cardIndex + '-' + partIndex + '-hide">Hide</label></div>' +
+              '<div class="usa-radio"><input class="usa-radio__input" id="do-' + cardIndex + '-' + partIndex + '-waive" type="radio" name="' + doName + '" value="waive" onchange="' + onChange + '"><label class="usa-radio__label" for="do-' + cardIndex + '-' + partIndex + '-waive">Waive</label></div>' +
             '</div>' +
             '<span class="condition-required">Required</span>' +
           '</div>' +
@@ -357,8 +361,16 @@
             '<div>' +
               '<select class="usa-select" id="part-select-' + cardIndex + '-' + partIndex + '" style="max-width:480px;">' +
                 '<option value="">Please select a part</option>' +
+                '<option value="fee-application-fee">Fee: Application Fee</option>' +
                 options +
               '</select>' +
+            '</div>' +
+            '<span class="condition-required">Required</span>' +
+          '</div>' +
+          '<div class="condition-row" id="waive-label-row-' + cardIndex + '-' + partIndex + '" style="display:none;">' +
+            '<span class="condition-label">Label</span>' +
+            '<div>' +
+              '<input class="usa-input" type="text" id="waive-label-input-' + cardIndex + '-' + partIndex + '" style="max-width:480px;" oninput="checkSaveEnabled(' + cardIndex + ')">' +
             '</div>' +
             '<span class="condition-required">Required</span>' +
           '</div>' +
@@ -367,6 +379,14 @@
           '</div>' +
         '</div>'
       );
+    }
+
+    function toggleWaiveLabel(cardIndex, partIndex) {
+      var waiveRow = document.getElementById('waive-label-row-' + cardIndex + '-' + partIndex);
+      var partSelect = document.getElementById('part-select-' + cardIndex + '-' + partIndex);
+      var isWaive = document.getElementById('do-' + cardIndex + '-' + partIndex + '-waive').checked;
+      if (waiveRow) waiveRow.style.display = isWaive ? '' : 'none';
+      if (partSelect) partSelect.value = isWaive ? 'fee-application-fee' : '';
     }
 
     function addPart(cardIndex) {
@@ -408,6 +428,10 @@
         var partSelect = panel.querySelector('select');
         if (!doChecked || !partSelect || !partSelect.value) {
           allPartsValid = false;
+        }
+        if (doChecked && doChecked.value === 'waive') {
+          var labelInput = panel.querySelector('input[type="text"]');
+          if (!labelInput || !labelInput.value.trim()) allPartsValid = false;
         }
       });
 
