@@ -225,6 +225,13 @@
     let ynQuestions = [];
     let partCounts = {};
 
+    var feeOptions = [
+      { value: 'fee-application-fee',  label: 'Fee: Application Fee' },
+      { value: 'fee-license-1yr',      label: 'Fee: License/Permit - 1 Year License' },
+      { value: 'fee-license-2yr',      label: 'Fee: License/Permit - 2 Year License' },
+      { value: 'fee-license-3yr',      label: 'Fee: License/Permit - 3 Year License' }
+    ];
+
     window.addEventListener('DOMContentLoaded', function() {
       loadData();
       renderConditions();
@@ -361,7 +368,6 @@
             '<div>' +
               '<select class="usa-select" id="part-select-' + cardIndex + '-' + partIndex + '" style="max-width:480px;">' +
                 '<option value="">Please select a part</option>' +
-                '<option value="fee-application-fee">Fee: Application Fee</option>' +
                 options +
               '</select>' +
             '</div>' +
@@ -385,8 +391,29 @@
       var waiveRow = document.getElementById('waive-label-row-' + cardIndex + '-' + partIndex);
       var partSelect = document.getElementById('part-select-' + cardIndex + '-' + partIndex);
       var isWaive = document.getElementById('do-' + cardIndex + '-' + partIndex + '-waive').checked;
+
       if (waiveRow) waiveRow.style.display = isWaive ? '' : 'none';
-      if (partSelect) partSelect.value = isWaive ? 'fee-application-fee' : '';
+
+      if (partSelect) {
+        if (isWaive) {
+          partSelect.innerHTML = '<option value="">Please Select</option>' +
+            feeOptions.map(function(o) {
+              return '<option value="' + o.value + '">' + o.label + '</option>';
+            }).join('');
+        } else {
+          var excludeIndex = ynQuestions[cardIndex].originalIndex;
+          var opts = allQuestions
+            .filter(function(p) { return p.originalIndex !== excludeIndex; })
+            .map(function(p) {
+              var label = '';
+              if (p.type === 'section') label = 'Section: ' + (p.title || '');
+              else if (p.type === 'description') label = 'Description: ' + (p.content || '').substring(0, 60);
+              else label = (p.question || '').substring(0, 80);
+              return '<option value="' + p.originalIndex + '">' + escapeHtml(label) + '</option>';
+            }).join('');
+          partSelect.innerHTML = '<option value="">Please select a part</option>' + opts;
+        }
+      }
     }
 
     function addPart(cardIndex) {
